@@ -1,4 +1,4 @@
-# test
+# Real Estate view page
 
 ## Project setup
 ```
