@@ -5,12 +5,13 @@
     <h4>Hello world, this is {{name}}.</h4>
 
     <Card/>
-    
+
   </div>
 </template>
 
 <script>
 import Card from './components/Card.vue';
+import Oneroom from './assets/rooms_post.js';
 
 export default {
   name: 'App',
@@ -20,6 +21,7 @@ export default {
   data() {
     return {
       name: "sarah",
+      Oneroom: Oneroom,
     };
   },
 }
