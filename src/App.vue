@@ -2,10 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
 
-    <h4>Hello world, this is {{name}}.</h4>
+    <h4 v-if="flag">Hello world, this is {{name}}.</h4>
     <p v-bind:style="fonts">font size</p>
 
     <button v-on:click="sortPrice">가격순으로 정렬하기</button>
+    <button v-on:click="hideName"> 이름 숨기기</button>
 
     <p>{{Oneroom[2].title}}</p>
     <img v-bind:src="Oneroom[2].image" alt="">
@@ -39,6 +40,7 @@ export default {
       name: "sarah",
       Oneroom: Oneroom,
       fonts: "font-size:26px",
+      flag: "true",
     };
   },
   methods:{
@@ -47,6 +49,9 @@ export default {
         return a.price-b.price
       });
     },
+    hideName(){
+      this.flag=false;
+    }
   }
 }
 </script>
