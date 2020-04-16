@@ -6,9 +6,8 @@
       <div class="row">
 
         <div class="col-md-2">
-          <li v-on:click="sortPrice">가격순정렬</li>
-          <li>글자순정렬</li>
-          <li>원래대로</li>
+          <button class="btn btn-light" v-on:click="sortPrice">가격순정렬</button>
+          <button class="btn btn-info" v-on:click="sortOriginal">원래대로</button>
         </div> 
 
         <div class="col-md-10">
@@ -33,8 +32,8 @@ export default {
   },
   data() {
     return {
-      부모꺼: ['chicken', 'pizza', 'ramen', 'dumplings'],
       Oneroom: Oneroom,
+      Oneroom원본: [...Oneroom],
     };
   },
   methods:{
@@ -43,9 +42,9 @@ export default {
         return a.price-b.price
       });
     },
-    hideName(){
-      this.flag=false;
-    }
+    sortOriginal(){
+      this.Oneroom = [...this.Oneroom원본];
+    },
   }
 }
 </script>
