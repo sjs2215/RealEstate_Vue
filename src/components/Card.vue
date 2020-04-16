@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="이름들 in food" v-bind:key="이름들">{{이름들}}</li>
-    </ul>
+  <div class="col-md-6">
+    <h4>{{rooms.title}}</h4>
+    <img :src="rooms.image" style="width:100%;">
+    <p>{{rooms.caption}}</p>
+    <p>{{rooms.price}}</p>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'Card',
   data(){
     return{
 
     };
+  },
+  props : {
+    rooms: Object,
   }
 }
 </script>

@@ -1,19 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+<div id="app">
+      <img alt="Vue logo" src="./assets/logo.png">
 
-    <h4 v-if="flag">Hello world, this is {{name}}.</h4>
+  <div class="container">
+      <div class="row">
 
-    <button v-on:click="hideName"> 이름 숨기기</button>
+        <div class="col-md-2">
+          <li v-on:click="sortPrice">가격순정렬</li>
+          <li>글자순정렬</li>
+          <li>원래대로</li>
+        </div> 
 
-    <Card/>
+        <div class="col-md-10">
+          <div class="row">           
+            <Card v-for="(별명, i) in Oneroom" v-bind:rooms="Oneroom[i]" v-bind:key="i"/>
+          </div>
+        </div>
 
+      </div>  
   </div>
+</div>
 </template>
 
 <script>
-import Oneroom from './assets/rooms_post.js';
 import Card from './components/Card.vue';
+import Oneroom from './assets/rooms_post.js';
 
 export default {
   name: 'App',
@@ -22,11 +33,8 @@ export default {
   },
   data() {
     return {
-      name: "sarah",
+      부모꺼: ['chicken', 'pizza', 'ramen', 'dumplings'],
       Oneroom: Oneroom,
-      fonts: "font-size:26px",
-      flag: "true",
-      food: ['chicken', 'pizza', 'ramen', 'dumplings'],
     };
   },
   methods:{
