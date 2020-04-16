@@ -45,6 +45,9 @@ export default {
     sortOriginal(){
       this.Oneroom = [...this.Oneroom원본];
     },
+  },
+  mounted(){
+    console.log("app.vue 실행됨"); //페이지 로드 시 실행
   }
 }
 </script>
